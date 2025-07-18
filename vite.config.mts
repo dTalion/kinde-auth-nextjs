@@ -3,6 +3,7 @@ import react from "@vitejs/plugin-react";
 import dts from "vite-plugin-dts";
 import { resolve } from "path";
 import preserveDirectives from "rollup-plugin-preserve-directives";
+import { turbopackCompatibilityPlugin } from "./plugins/turbopack-compatibility";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -12,6 +13,7 @@ export default defineConfig({
       include: ["src/**/*.ts", "src/**/*.tsx", "src/**/*.js", "src/**/*.jsx"],
       outDir: "dist/types",
     }),
+    turbopackCompatibilityPlugin(),
   ],
   build: {
     lib: {

@@ -17,106 +17,116 @@
       }
     },
     "./server": {
+      "edge": "./dist/server.es.js",
       "import": {
-        "types": "./dist/types/server/index.d.ts",
-        "default": "./dist/server.es.js"
+        "default": "./dist/server.es.js",
+        "types": "./dist/types/server/index.d.ts"
       },
       "require": {
-        "types": "./dist/types/server/index.d.ts",
-        "default": "./dist/server.cjs.js"
+        "default": "./dist/server.cjs.js",
+        "types": "./dist/types/server/index.d.ts"
       }
     },
-    "./components": {
-      "import": {
-        "types": "./dist/types/components/index.d.ts",
-        "default": "./dist/components.es.js"
-      },
-      "require": {
-        "types": "./dist/types/components/index.d.ts",
-        "default": "./dist/components.cjs.js"
-      }
+    "import": {
+      "types": "./dist/types/server/index.d.ts",
+      "default": "./dist/server.es.js"
     },
-    "./middleware": {
-      "import": {
-        "types": "./dist/types/middleware/index.d.ts",
-        "default": "./dist/middleware.es.js"
-      },
-      "require": {
-        "types": "./dist/types/middleware/index.d.ts",
-        "default": "./dist/middleware.cjs.js"
-      }
-    },
-    "./types": {
-      "import": {
-        "types": "./dist/types/types.d.ts",
-        "default": "./dist/index.js"
-      }
+    "require": {
+      "types": "./dist/types/server/index.d.ts",
+      "default": "./dist/server.cjs.js"
     }
   },
-  "scripts": {
-    "build": "genversion --es6 src/utils/version.js && vite build",
-    "build:watch": "genversion --es6 src/utils/version.js && vite build --watch",
-    "test": "vitest",
-    "test:coverage": "vitest --coverage",
-    "release": "release-it",
-    "lint": "prettier --check .",
-    "lint:fix": "prettier --write .",
-    "dev": "cd playground && pnpm run dev"
+  "./components": {
+    "import": {
+      "types": "./dist/types/components/index.d.ts",
+      "default": "./dist/components.es.js"
+    },
+    "require": {
+      "types": "./dist/types/components/index.d.ts",
+      "default": "./dist/components.cjs.js"
+    }
   },
-  "author": {
-    "name": "Kinde",
-    "email": "engineering@kinde.com",
-    "url": "https://kinde.com"
+  "./middleware": {
+    "import": {
+      "types": "./dist/types/middleware/index.d.ts",
+      "default": "./dist/middleware.es.js"
+    },
+    "require": {
+      "types": "./dist/types/middleware/index.d.ts",
+      "default": "./dist/middleware.cjs.js"
+    }
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/kinde-oss/kinde-auth-nextjs"
-  },
-  "bugs": "https://github.com/kinde-oss/kinde-auth-nextjs",
-  "homepage": "https://kinde.com",
-  "devDependencies": {
-    "@eslint/eslintrc": "^3.3.0",
-    "@eslint/js": "^9.22.0",
-    "@testing-library/react": "^16.2.0",
-    "@types/react": "^19.0.8",
-    "@types/react-dom": "^19.0.3",
-    "@vitejs/plugin-react": "^4.3.4",
-    "@vitest/coverage-v8": "3.2.4",
-    "ajv": "^8.17.1",
-    "changelogen": "^0.6.0",
-    "eslint": "^9.22.0",
-    "eslint-config-prettier": "^10.0.1",
-    "genversion": "^3.2.0",
-    "globals": "^16.0.0",
-    "happy-dom": "^17.0.0",
-    "prettier": "^3.4.2",
-    "release-it": "^18.1.2",
-    "rollup-plugin-preserve-directives": "^0.4.0",
-    "typescript": "^5.7.3",
-    "vite": "^6.2.5",
-    "vite-plugin-dts": "^4.5.3",
-    "vitest": "^3.0.5"
-  },
-  "peerDependencies": {
-    "next": "^12.3.5 || ^13.5.9 || ^14.2.25 || ^15.2.3",
-    "react": "^18 || ^19",
-    "react-dom": "^18 || ^19"
-  },
-  "dependencies": {
-    "@kinde-oss/kinde-typescript-sdk": "2.12.0",
-    "@kinde/js-utils": "^0.18.1",
-    "@kinde/jwt-decoder": "^0.2.0",
-    "@kinde/jwt-validator": "^0.4.0",
-    "cookie": "^1.0.2",
-    "crypto-js": "^4.2.0",
-    "uncrypto": "^0.1.3"
-  },
-  "files": [
-    "LICENSE.md",
-    "package.json",
-    "package-lock.json",
-    "readme.md",
-    "dist"
-  ],
-  "packageManager": "pnpm@8.15.9+sha512.499434c9d8fdd1a2794ebf4552b3b25c0a633abcee5bb15e7b5de90f32f47b513aca98cd5cfd001c31f0db454bc3804edccd578501e4ca293a6816166bbd9f81"
+  "./types": {
+    "import": {
+      "types": "./dist/types/types.d.ts",
+      "default": "./dist/index.js"
+    }
+  }
+},
+"scripts": {
+"build": "genversion --es6 src/utils/version.js && vite build",
+"build:watch": "genversion --es6 src/utils/version.js && vite build --watch",
+"test": "vitest",
+"test:coverage": "vitest --coverage",
+"release": "release-it",
+"lint": "prettier --check .",
+"lint:fix": "prettier --write .",
+"dev": "cd playground && pnpm run dev"
+},
+"author": {
+"name": "Kinde",
+"email": "engineering@kinde.com",
+"url": "https://kinde.com"
+},
+"repository": {
+"type": "git",
+"url": "https://github.com/kinde-oss/kinde-auth-nextjs"
+},
+"bugs": "https://github.com/kinde-oss/kinde-auth-nextjs",
+"homepage": "https://kinde.com",
+"devDependencies": {
+"@eslint/eslintrc": "^3.3.0",
+"@eslint/js": "^9.22.0",
+"@testing-library/react": "^16.2.0",
+"@types/react": "^19.0.8",
+"@types/react-dom": "^19.0.3",
+"@vitejs/plugin-react": "^4.3.4",
+"@vitest/coverage-v8": "3.2.4",
+"ajv": "^8.17.1",
+"changelogen": "^0.6.0",
+"eslint": "^9.22.0",
+"eslint-config-prettier": "^10.0.1",
+"genversion": "^3.2.0",
+"globals": "^16.0.0",
+"happy-dom": "^17.0.0",
+"prettier": "^3.4.2",
+"release-it": "^18.1.2",
+"rollup-plugin-preserve-directives": "^0.4.0",
+"typescript": "^5.7.3",
+"vite": "^6.2.5",
+"vite-plugin-dts": "^4.5.3",
+"vitest": "^3.0.5"
+},
+"peerDependencies": {
+"next": "^12.3.5 || ^13.5.9 || ^14.2.25 || ^15.2.3",
+"react": "^18 || ^19",
+"react-dom": "^18 || ^19"
+},
+"dependencies": {
+"@kinde-oss/kinde-typescript-sdk": "2.12.0",
+"@kinde/js-utils": "^0.18.1",
+"@kinde/jwt-decoder": "^0.2.0",
+"@kinde/jwt-validator": "^0.4.0",
+"cookie": "^1.0.2",
+"crypto-js": "^4.2.0",
+"uncrypto": "^0.1.3"
+},
+"files": [
+"LICENSE.md",
+"package.json",
+"package-lock.json",
+"readme.md",
+"dist"
+],
+"packageManager": "pnpm@8.15.9+sha512.499434c9d8fdd1a2794ebf4552b3b25c0a633abcee5bb15e7b5de90f32f47b513aca98cd5cfd001c31f0db454bc3804edccd578501e4ca293a6816166bbd9f81"
 }
